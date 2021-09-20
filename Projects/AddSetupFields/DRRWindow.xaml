@@ -1,0 +1,90 @@
+﻿<Window x:Class="AddSetupFields.DRRWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AddSetupFields"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Select DRR Parameters" Height="350" Width="800">
+
+    <Window.Resources>
+        <Style x:Name="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="./#Segoe UI"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#F8F9F9"/>
+                                <Setter Property="Foreground" Value="#CACFD2"/>
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#CACFD2"/>
+                                <Setter TargetName="ButtonBorder" Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Background" Value="#E5E7E9"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#E5E7E9"/>
+                                <Setter TargetName="ButtonBorder" Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                            <MultiTrigger x:Name="MouseOver">
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsEnabled" Value="True"/>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#5DADE2"/>
+                                    <Setter TargetName="ButtonBorder" Property="BorderThickness" Value="2"/>
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                            <MultiTrigger x:Name="ButtonPressed">
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsEnabled" Value="True"/>
+                                    <Condition Property="IsPressed" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#5DADE2"/>
+                                    <Setter TargetName="ButtonBorder" Property="BorderThickness" Value="3"/>
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Name="RadioButtonStyle" TargetType="RadioButton">
+            <Setter Property="Background" Value="#F2F3F4"/>
+        </Style>
+    </Window.Resources>
+    
+    <Border BorderBrush="#922247" Background="Gray" BorderThickness="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Name="Select" Content="Select  DRR" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="20"/>
+            <Label Grid.Row="0" Grid.Column="1" Name="Parameters" Content="Parameters" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="20"/>
+            <Label Grid.Row="1" Grid.Column="0" Name="Bone" Content="Bone" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="20" Margin="0,0,0,30"/>
+            <Label Grid.Row="1" Grid.Column="1" Name="Chest" Content="Chest" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="20" Margin="0,0,0,30"/>
+
+            <RadioButton Grid.Row="1" Grid.Column="0" GroupName="DRR" Name="BoneButton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" Checked="BoneButton_Checked"/>
+            <RadioButton Grid.Row="1" Grid.Column="1" GroupName="DRR" Name="ChestButton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" Checked="ChestButton_Checked"/>
+            
+            <Button Grid.Row="2" Grid.Column="1" Name="AddSetupFields" Content="Add Setup Fields" Height="80" Width="180" IsEnabled="False" Click="Button_Click"/>
+
+            <Image Grid.Column="0" Grid.Row="2" Height="125" Width="250" VerticalAlignment="Center" Name="loyola_medicine" Source="pack://application:,,,/AddSetupFields.esapi;component/LoyolaMedicine.png"></Image>
+        </Grid>
+    </Border>
+</Window>

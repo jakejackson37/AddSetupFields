@@ -1,0 +1,11 @@
+C:\ESAPI\Scripts\SetupFields\plugins\AddSetupFields.esapi.dll
+C:\ESAPI\Scripts\SetupFields\plugins\AddSetupFields.esapi.pdb
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\AddSetupFields.csprojAssemblyReference.cache
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\AddSetupFields.csproj.CoreCompileInputs.cache
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\AddSetupFields.esapi.dll
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\AddSetupFields.esapi.pdb
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\DRRWindow.g.cs
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\AddSetupFields.esapi_MarkupCompile.cache
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\AddSetupFields.esapi_MarkupCompile.lref
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\DRRWindow.baml
+C:\ESAPI\Scripts\SetupFields\Projects\AddSetupFields\obj\x64\Debug\AddSetupFields.esapi.g.resources
