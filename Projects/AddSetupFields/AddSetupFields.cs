@@ -10,8 +10,8 @@ using VMS.TPS.Common.Model.Types;
 using AddSetupFields;
 
 // TODO: Replace the following version attributes by creating AssemblyInfo.cs. You can do this in the properties of the Visual Studio project.
-[assembly: AssemblyVersion("1.1.0")]
-[assembly: AssemblyFileVersion("1.1.0")]
+[assembly: AssemblyVersion("1.2.0")]
+[assembly: AssemblyFileVersion("1.2.0")]
 [assembly: AssemblyInformationalVersion("1.0")]
 
 // TODO: Uncomment the following line if the script requires write access.
@@ -29,7 +29,7 @@ namespace VMS.TPS
         {
             if (planName.Length > 11)
             {
-                planName = planName.Substring(0, 11);
+                planName = planName.Substring(0, 11).Trim();
             }
 
             beam.Id = "CBCT " + planName;
@@ -39,7 +39,7 @@ namespace VMS.TPS
         {
             if (planName.Length > 11)
             {
-                planName = planName.Substring(0, 11);
+                planName = planName.Substring(0, 11).Trim();
             }
 
             if (orientation.ToString() == "HeadFirstSupine")
