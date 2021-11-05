@@ -131,10 +131,199 @@ namespace VMS.TPS
             }
         }
 
+        private static void NameProneKV(string planName, Beam setupBeam, PatientOrientation orientation)
+        {
+            if (planName.Length > 10)
+            {
+                planName = planName.Substring(0, 10).Trim();
+            }
+
+            if (orientation.ToString() == "HeadFirstSupine")
+            {
+                if (setupBeam.ControlPoints[0].GantryAngle > 0 && setupBeam.ControlPoints[0].GantryAngle < 90)
+                {
+                    setupBeam.Id = "LAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 90 && setupBeam.ControlPoints[0].GantryAngle < 180)
+                {
+                    setupBeam.Id = "LPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 180 && setupBeam.ControlPoints[0].GantryAngle < 270)
+                {
+                    setupBeam.Id = "RPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 270 && setupBeam.ControlPoints[0].GantryAngle < 360)
+                {
+                    setupBeam.Id = "RAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 0)
+                {
+                    setupBeam.Id = "APSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 90)
+                {
+                    setupBeam.Id = "LLSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 180)
+                {
+                    setupBeam.Id = "PASU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 270)
+                {
+                    setupBeam.Id = "RLSU " + planName;
+                }
+            }
+
+            if (orientation.ToString() == "HeadFirstProne")
+            {
+                if (setupBeam.ControlPoints[0].GantryAngle > 0 && setupBeam.ControlPoints[0].GantryAngle < 90)
+                {
+                    setupBeam.Id = "RPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 90 && setupBeam.ControlPoints[0].GantryAngle < 180)
+                {
+                    setupBeam.Id = "RAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 180 && setupBeam.ControlPoints[0].GantryAngle < 270)
+                {
+                    setupBeam.Id = "LAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 270 && setupBeam.ControlPoints[0].GantryAngle < 360)
+                {
+                    setupBeam.Id = "LPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 0)
+                {
+                    setupBeam.Id = "PASU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 90)
+                {
+                    setupBeam.Id = "RLSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 180)
+                {
+                    setupBeam.Id = "APSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 270)
+                {
+                    setupBeam.Id = "LLSU " + planName;
+                }
+            }
+
+            if (orientation.ToString() == "FeetFirstSupine")
+            {
+                if (setupBeam.ControlPoints[0].GantryAngle > 0 && setupBeam.ControlPoints[0].GantryAngle < 90)
+                {
+                    setupBeam.Id = "RAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 90 && setupBeam.ControlPoints[0].GantryAngle < 180)
+                {
+                    setupBeam.Id = "RPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 180 && setupBeam.ControlPoints[0].GantryAngle < 270)
+                {
+                    setupBeam.Id = "LPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 270 && setupBeam.ControlPoints[0].GantryAngle < 360)
+                {
+                    setupBeam.Id = "LAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 0)
+                {
+                    setupBeam.Id = "APSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 90)
+                {
+                    setupBeam.Id = "RLSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 180)
+                {
+                    setupBeam.Id = "PASU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 270)
+                {
+                    setupBeam.Id = "LLSU " + planName;
+                }
+            }
+
+            if (orientation.ToString() == "FeetFirstProne")
+            {
+                if (setupBeam.ControlPoints[0].GantryAngle > 0 && setupBeam.ControlPoints[0].GantryAngle < 90)
+                {
+                    setupBeam.Id = "LPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 90 && setupBeam.ControlPoints[0].GantryAngle < 180)
+                {
+                    setupBeam.Id = "LAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 180 && setupBeam.ControlPoints[0].GantryAngle < 270)
+                {
+                    setupBeam.Id = "RAOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle > 270 && setupBeam.ControlPoints[0].GantryAngle < 360)
+                {
+                    setupBeam.Id = "RPOSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 0)
+                {
+                    setupBeam.Id = "PASU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 90)
+                {
+                    setupBeam.Id = "LLSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 180)
+                {
+                    setupBeam.Id = "APSU " + planName;
+                }
+                else if (setupBeam.ControlPoints[0].GantryAngle == 270)
+                {
+                    setupBeam.Id = "RLSU " + planName;
+                }
+            }           
+        }
+
+        private double CalculateFieldArea(ControlPoint cp)
+        {
+            double[] BankA = new double[60];
+            double[] BankB = new double[60];
+
+            for (int i = 0; i < 120; i++)
+            {
+                if (i < 60)
+                {
+                    BankA[i] = cp.LeafPositions[0, i] / 10;
+                }
+
+                if (i >= 60)
+                {
+                    BankB[i - 60] = cp.LeafPositions[1, i - 60] / 10;
+                }
+            }
+
+            double area = 0;
+            double[] gaps = new double[60];
+            for (int i = 0; i < BankA.Length; i++)
+            {
+                gaps[i] = BankB[i] - BankA[i];
+                if (i > 9 && i < 50)
+                {
+                    area += gaps[i] * 0.5;
+                }
+                else
+                {
+                    area += gaps[i] * 1;
+                }
+            }
+
+            return area;
+        }
+
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public void Execute(ScriptContext context /*, System.Windows.Window window, ScriptEnvironment environment*/)
         {
+            #region Establish Context
             Patient patient = context.Patient;
             PatientOrientation imageOrientation = context.Image.ImagingOrientation;
 
@@ -145,7 +334,9 @@ namespace VMS.TPS
                 MessageBox.Show("A plan must be opened in the context window before adding setup fields");
                 return;
             }
+            #endregion
 
+            #region Reconcile treatment orientation with CT orientation if they are different
             PatientOrientation txOrientation = plan.TreatmentOrientation;
 
             //If tx plan orientation disagrees with CT image orientation, then validate with user the tx plan orientation
@@ -163,7 +354,9 @@ namespace VMS.TPS
                     return;
                 }
             }
+            #endregion
 
+            #region Get necessary parameters from treatment field
             IEnumerable<Beam> beamsEnum = plan.Beams;
 
             List<Beam> beamsList = beamsEnum.ToList();
@@ -175,19 +368,24 @@ namespace VMS.TPS
 
             VVector iso = beamsList[0].IsocenterPosition;
             ExternalBeamTreatmentUnit machine = beamsList[0].TreatmentUnit;
+            #endregion
 
             patient.BeginModifications();
 
+            #region GUI
             //Showing the GUI window to allow user to select DRR parameters
             DRRWindow window = new DRRWindow();
             window.ShowDialog();
             string drrParameters = window.DRRparameters;
+            bool prone = window.Prone;
 
             if (drrParameters == null)
             {
                 return;
             }
+            #endregion
 
+            #region Add Setup Fields
             ExternalBeamMachineParameters parameters = new ExternalBeamMachineParameters(machine.Id, "6X", 600, "STATIC", null);
 
             //Adding beams to plan
@@ -196,6 +394,7 @@ namespace VMS.TPS
             Beam G90 = plan.AddSetupBeam(parameters, new VRect<double>(-100, -100, 100, 100), 0, 90, 0, iso);
             Beam G180 = plan.AddSetupBeam(parameters, new VRect<double>(-100, -100, 100, 100), 0, 180, 0, iso);
             Beam G270 = plan.AddSetupBeam(parameters, new VRect<double>(-100, -100, 100, 100), 0, 270, 0, iso);
+         
 
             //Naming the setup fields and appending the plan name at the end
             NameCBCT(plan.Id, CBCT);
@@ -230,6 +429,58 @@ namespace VMS.TPS
                 G180.CreateOrReplaceDRR(Bone);
                 G270.CreateOrReplaceDRR(Bone);
             }
+            #endregion
+
+            //Loop which adds prone setup fields with same treatment parameters at treatment fields
+            if (prone == true)
+            {
+                List<ControlPoint> parentBeams = new List<ControlPoint>();
+                List<double> gantryAngles = new List<double>();
+                foreach (Beam beam in beamsList)
+                {
+                    if (beam.ControlPoints.Count > 2)
+                    {
+                        Dictionary<int, double> subFields = new Dictionary<int, double>();
+                        foreach (ControlPoint cp in beam.ControlPoints)
+                        {
+                            double area = CalculateFieldArea(cp);
+                            subFields.Add(cp.Index, area);
+                        }
+
+                        int max = subFields.OrderByDescending(x => x.Value).First().Key;
+                        parentBeams.Add(beam.ControlPoints[max]);
+
+                        subFields.Clear();
+                        
+                        foreach (ControlPoint cp in parentBeams)
+                        {
+                            if (!gantryAngles.Contains(cp.GantryAngle))
+                            {
+                                gantryAngles.Add(cp.GantryAngle);
+                                Beam proneSetup = plan.AddMLCSetupBeam(parameters, cp.LeafPositions, cp.JawPositions, cp.CollimatorAngle, cp.GantryAngle, cp.PatientSupportAngle, iso);
+                                NameProneKV(plan.Id, proneSetup, txOrientation);
+                                if (drrParameters == "Chest") { proneSetup.CreateOrReplaceDRR(Chest); } else { proneSetup.CreateOrReplaceDRR(Bone); }
+                            }
+                        }
+
+                        parentBeams.Clear();
+                    }
+                    else
+                    {
+                        if (!gantryAngles.Contains(beam.ControlPoints[0].GantryAngle))
+                        {
+                            gantryAngles.Add(beam.ControlPoints[0].GantryAngle);
+                            Beam proneSetup = plan.AddMLCSetupBeam(parameters, beam.ControlPoints[0].LeafPositions, beam.ControlPoints[0].JawPositions, beam.ControlPoints[0].CollimatorAngle,
+                                beam.ControlPoints[0].GantryAngle, beam.ControlPoints[0].PatientSupportAngle, iso);
+
+                            NameProneKV(plan.Id, proneSetup, txOrientation);
+                            if (drrParameters == "Chest") { proneSetup.CreateOrReplaceDRR(Chest); } else { proneSetup.CreateOrReplaceDRR(Bone); }
+                        }
+                    }
+                }                    
+            }
+
+            
             
         }
     }

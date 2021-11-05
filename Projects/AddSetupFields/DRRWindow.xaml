@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AddSetupFields"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Select DRR Parameters" Height="350" Width="800">
+        Title="Select DRR Parameters" Height="400" Width="800">
 
     <Window.Resources>
         <Style x:Name="ButtonStyle" TargetType="{x:Type Button}">
@@ -71,6 +71,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.6*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
@@ -78,13 +79,17 @@
             <Label Grid.Row="0" Grid.Column="1" Name="Parameters" Content="Parameters" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="20"/>
             <Label Grid.Row="1" Grid.Column="0" Name="Bone" Content="Bone" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="20" Margin="0,0,0,30"/>
             <Label Grid.Row="1" Grid.Column="1" Name="Chest" Content="Chest" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="20" Margin="0,0,0,30"/>
+            <Label Grid.Row="2" Grid.Column="1" Name="ProneBreast" Content="Include prone breast setup fields" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" FontWeight="Medium"
+                   FontStyle="Italic" FontSize="18" Margin="0,0,0,15"/>
 
             <RadioButton Grid.Row="1" Grid.Column="0" GroupName="DRR" Name="BoneButton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" Checked="BoneButton_Checked"/>
             <RadioButton Grid.Row="1" Grid.Column="1" GroupName="DRR" Name="ChestButton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" Checked="ChestButton_Checked"/>
-            
-            <Button Grid.Row="2" Grid.Column="1" Name="AddSetupFields" Content="Add Setup Fields" Height="80" Width="180" IsEnabled="False" Click="Button_Click"/>
 
-            <Image Grid.Column="0" Grid.Row="2" Height="125" Width="250" VerticalAlignment="Center" Name="loyola_medicine" Source="pack://application:,,,/AddSetupFields.esapi;component/LoyolaMedicine.png"></Image>
+            <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="False" Name="ProneCheckBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0"/>
+
+            <Button Grid.Row="3" Grid.Column="1" Name="AddSetupFields" Content="Add Setup Fields" Height="80" Width="180" IsEnabled="False" Click="Button_Click"/>
+
+            <Image Grid.Column="0" Grid.Row="3" Height="125" Width="250" VerticalAlignment="Center" Name="loyola_medicine" Source="pack://application:,,,/AddSetupFields.esapi;component/LoyolaMedicine.png"></Image>
         </Grid>
     </Border>
 </Window>

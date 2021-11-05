@@ -20,6 +20,7 @@ namespace AddSetupFields
     public partial class DRRWindow : Window
     {
         public string DRRparameters { get; set; }
+        public bool Prone { get; set; }
         public DRRWindow()
         {
             InitializeComponent();
@@ -35,6 +36,15 @@ namespace AddSetupFields
             else if (ChestButton.IsChecked == true)
             {
                 DRRparameters = "Chest";
+            }
+
+            if (ProneCheckBox.IsChecked == true)
+            {
+                Prone = true;
+            }
+            else
+            {
+                Prone = false;
             }
             Close();
         }
